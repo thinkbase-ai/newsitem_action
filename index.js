@@ -28,13 +28,13 @@ const { v4: uuidv4 } = require('uuid');
         const query = gql`
         mutation cks($subjectId: String! $title: String! $content: String!)
           {
-          createKnowledgeState(ks: 
+          createKnowledgeState(asSystem: true ks: 
           {
               subjectId: $subjectId
               knowledgeGraphName: "backoffice_test.graph"
               data: [
               {
-                  name: "newsitem"
+                  name: "7fdfd2ea-d7a9-431e-a03c-b0e68676e47a"
                   value: [
                   {
                   lineage: "noun:01,4,05,13,09+noun:01,3,14,01,06,21"
@@ -62,6 +62,14 @@ const { v4: uuidv4 } = require('uuid');
           {
               knowledgeGraphName
               subjectId
+              data
+              {
+                  name
+                  value{
+                      name
+                      value
+                  }
+              }
           }
           }
         `;
