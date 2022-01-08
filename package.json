@@ -4,7 +4,11 @@
   "description": "Creates a newsItem knowledge state on the ThinkBase backoffice KnowledgeGraph containing details of the action just taken.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider",
+    "all": "npm run start && npm run prepare"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,8 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "graphql-request": "^3.7.0"
+    "graphql-request": "^3.7.0",
+    "source-map-support": "^0.5.21",
+    "uuid": "^8.3.2"
   }
 }
