@@ -71,7 +71,7 @@ const { v4: uuidv4 } = require('uuid');
           "content": "Updates are: '" + message + "' made by " + author + " at " + timestamp + ".",
         };
       
-        const data = await  GraphQLClient.request(query, variables);
+        const data = await  graphQLClient.request(query, variables);
         console.log(JSON.stringify(data, undefined, 2));
       } catch (error) {
         core.setFailed(error.message);
