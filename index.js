@@ -76,7 +76,7 @@ const { v4: uuidv4 } = require('uuid');
         const variables = {
           "subjectId": subjectId,
           "title": "Update of " + visibility + " " + project + " from " + org + ".",
-          "content": "Updates are: '" + message + "' made by " + author + " at " + timestamp + ".",
+          "content": "Updates are: '" + message + "' made by " + author + " at " + timestamp + "."
         };
       
         const data = await  graphQLClient.request(query, variables);
